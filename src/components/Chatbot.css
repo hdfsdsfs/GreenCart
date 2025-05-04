@@ -1,0 +1,170 @@
+/* Tất cả nằm trong .chatbot-container để tránh ảnh hưởng toàn trang */
+.chatbot-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  .chatbot-popup {
+    width: 340px;
+    height: 460px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  #toggle-chatbot {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: red;
+    color: yellow;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+  }
+  
+  #toggle-chatbot:hover {
+    background-color: #1c105e;
+  }
+  
+  .chat-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #a89292;
+  }
+  
+  .message {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-message .message-text {
+    background-color: #ffffff;
+    align-self: flex-end;
+    border-radius: 12px 12px 0 12px;
+  }
+  
+  .bot-message .message-text {
+    background-color: #f8d7da;
+    align-self: flex-start;
+    border-radius: 12px 12px 12px 0;
+  }
+  
+  .message-text {
+    padding: 10px 14px;
+    max-width: 85%;
+    line-height: 1.4;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 8px;
+  }
+  
+  #send-message,
+  #file-upload,
+  #file-cancel {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  #send-message {
+    background-color: #e2e2e2;
+    color: rgb(0, 0, 0);
+  }
+  
+  #send-message:hover {
+    background-color: #727874;
+  }
+  
+  #file-upload {
+    background-color:#e2e2e2;
+    color: white;
+  }
+  
+  #file-upload:hover {
+    background-color:#727874;
+  }
+  
+  #file-cancel {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  #file-cancel:hover {
+    background-color: #c82333;
+  }
+  
+  /* Thinking animation */
+  .thinking-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #007bff;
+    animation: dot-blink 1.2s infinite;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes dot-blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  
+  /* File preview */
+  .file-upload-wrapper img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
